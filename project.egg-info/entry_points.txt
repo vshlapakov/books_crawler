@@ -1,3 +1,0 @@
-[scrapy]
-settings = books_crawler.settings
-
