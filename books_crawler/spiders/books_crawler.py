@@ -22,7 +22,7 @@ class BooksToScrapeSpider(scrapy.Spider):
         for books in response.css('article.product_pod'):
             yield {
                 # Used title rather than text because some book's text had ellipsis
-                'book title': books.css('h3 > a::attr(title)').extract_first(),
+                'book title': 'Test update' + books.css('h3 > a::attr(title)').extract_first(),
                 'book price': books.css('p.price_color::text').extract_first(),
                 # Used response.urljoin to make absolute URL
                 'book image URL': response.urljoin(books.css('div.image_container > a > img::attr(src)').extract_first()),
